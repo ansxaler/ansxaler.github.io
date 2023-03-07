@@ -123,7 +123,9 @@ body {
 
 a,
 button {
+  color: inherit;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .header {
