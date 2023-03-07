@@ -1,0 +1,15 @@
+# Folders
+
+.sass-cache/
+_site/
+icons/
+node_modules
+
+# Files
+
+.DS_Store
+.jekyll-metadata
+npm-debug.log
+package-lock.json
+Thumbs.db
+yarn.lock

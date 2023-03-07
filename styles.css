@@ -1,0 +1,256 @@
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+:root {
+  --blue: #3a80bc;
+  --black: #0e0e0f;
+  --white: #fff;
+}
+
+html {
+  background: linear-gradient(180deg, #04010b 0%, #221641 100%), #0b0813;
+  color: var(--white);
+  font-size: 1em;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  min-width: 320px;
+  overflow: hidden;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+}
+
+body,
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: "Red Hat Display", sans-serif;
+}
+
+strong {
+  font-weight: inherit;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 3rem;
+  letter-spacing: 0.07em;
+  text-align: center;
+  text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.text {
+  background: linear-gradient(0deg, rgb(155 120 255 / 60%), rgb(47 0 181 / 60%)),
+    linear-gradient(268.7deg, #bababa -9.86%, rgb(255 255 255 / 0%) 101.11%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.overlay {
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  background-image: url("assets/Space.jpg");
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.header {
+  position: relative;
+}
+
+.logo img {
+  height: 61.75px;
+  width: 304.5px;
+}
+
+.tagline {
+  background: linear-gradient(
+    268.7deg,
+    #5b26de -9.86%,
+    #871ff5 16.15%,
+    #d24ff8 51.41%,
+    #f337ee 74.52%,
+    #ff6cd2 101.11%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.5em;
+  text-fill-color: transparent;
+  position: relative;
+}
+
+.cta {
+  position: relative;
+}
+
+.btn {
+  --radius: 0.5em;
+  --spacing: 2px;
+  --alpha: 0.2;
+  background: linear-gradient(
+    87.83deg,
+    #f46722 -0.89%,
+    #f51e6d 12.17%,
+    #b30eab 32.23%,
+    #dc0b8c 49.84%,
+    #523ce9 64.4%,
+    #3b7bea 80.48%,
+    #15e3d0 95.54%
+  );
+  border-radius: var(--radius);
+  display: flex;
+  padding: var(--spacing);
+  transition-duration: 0.2s;
+  transition-property: transform;
+}
+
+.btn .background {
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+    url("assets/Space.jpg");
+  display: flex;
+  border-radius: calc(var(--radius) - var(--spacing));
+}
+
+.btn .label {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: calc(var(--radius) - var(--spacing));
+  display: flex;
+  padding: 1em 1.5em;
+  transition-duration: 1s;
+  transition-property: background;
+}
+
+.btn:hover .label {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:label {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cat {
+  bottom: 0;
+  display: flex;
+  right: 0;
+  position: fixed;
+  transform-origin: center;
+  transform: rotate(-45deg) translate(0%, 20%);
+}
+
+.cat img {
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 278.25px;
+  width: 269.5px;
+}
