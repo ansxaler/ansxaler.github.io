@@ -80,6 +80,7 @@ th {
   --blue: #3a80bc;
   --black: #0e0e0f;
   --white: #fff;
+  --debug-width: 0px;
 }
 
 html {
@@ -89,7 +90,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   min-width: 320px;
-  overflow: hidden;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
 }
@@ -103,11 +103,23 @@ textarea {
   font-family: "Red Hat Display", sans-serif;
 }
 
+body {
+  min-height: 300vh;
+  text-align: center;
+}
+
 strong {
   font-weight: inherit;
 }
 
-body {
+a,
+button {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.waiting {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -121,17 +133,22 @@ body {
   text-transform: uppercase;
 }
 
-a,
-button {
-  color: inherit;
-  cursor: pointer;
-  text-decoration: none;
+.heading {
+  font-size: 1.25em;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
 }
 
 .header {
+  align-items: center;
+  border: var(--debug-width) solid blue;
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  height: 20vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
 }
 
 .text {
@@ -153,10 +170,6 @@ button {
   position: fixed;
   top: 0;
   width: 100vw;
-}
-
-.header {
-  position: relative;
 }
 
 .logo img {
@@ -255,4 +268,99 @@ button {
   flex-shrink: 0;
   height: 278.25px;
   width: 269.5px;
+}
+
+.main {
+  align-items: flex-start;
+  border: var(--debug-width) solid red;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  padding-top: 20vh;
+  perspective: 1000px;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.plane {
+  border: var(--debug-width) solid green;
+  display: grid;
+  gap: 2em;
+  max-width: 32em;
+  padding-top: 40vh;
+  transform-origin: top center;
+  transform: perspective(100px) rotateX(10deg)
+    translateY(calc(0% - calc(var(--t) * 0.1%)));
+  transition-duration: 100ms;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+}
+
+.item {
+  --o: 1;
+  opacity: var(--o);
+}
+
+.grad-text {
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  background: linear-gradient(
+    268.7deg,
+    #5b26de -9.86%,
+    #871ff5 16.15%,
+    #d24ff8 51.41%,
+    #f337ee 74.52%,
+    #ff6cd2 101.11%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.box {
+  background: linear-gradient(180deg, #04010b 0%, #221641 100%), #0b0813;
+  border-style: dotted;
+  border-width: 5px;
+
+  border-image: linear-gradient(
+      87.83deg,
+      #f46722 0%,
+      #f51e6d 12.17%,
+      #b30eab 32.23%,
+      #dc0b8c 49.84%,
+      #523ce9 64.4%,
+      #3b7bea 80.48%,
+      #15e3d0 95.54%
+    )
+    1;
+
+  display: grid;
+  gap: 1em;
+  padding: 2em;
+  position: absolute;
+  width: 22em;
+  left: 20vh;
+  transform: rotateY(45deg) translateY(calc(0% - calc(var(--t) * 0.1%)));
+  top: 100vh;
+}
+
+.grad-line {
+  background: linear-gradient(
+    87.83deg,
+    #f46722 -0.89%,
+    #f51e6d 12.17%,
+    #b30eab 32.23%,
+    #dc0b8c 49.84%,
+    #523ce9 64.4%,
+    #3b7bea 80.48%,
+    #15e3d0 95.54%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
