@@ -81,6 +81,7 @@ th {
   --black: #0e0e0f;
   --white: #fff;
   --debug-width: 0px;
+  --speed: 200ms;
 }
 
 html {
@@ -104,7 +105,6 @@ textarea {
 }
 
 body {
-  min-height: 300vh;
   text-align: center;
 }
 
@@ -149,6 +149,7 @@ button {
   position: fixed;
   right: 0;
   top: 0;
+  transform: scale(calc(1 - calc(var(--factor) * 0.5)));
 }
 
 .text {
@@ -273,34 +274,45 @@ button {
 .main {
   align-items: flex-start;
   border: var(--debug-width) solid red;
-  display: flex;
-  height: 100vh;
+  /*display: flex;*/
+  height: 300vh;
+  overflow: hidden;
   justify-content: center;
   left: 0;
   padding-top: 20vh;
-  perspective: 1000px;
-  position: fixed;
+  /*perspective: 1000px;*/
+  /*position: fixed;*/
   right: 0;
   top: 0;
+  position: relative;
 }
 
 .plane {
   border: var(--debug-width) solid green;
   display: grid;
+  font-size: 0.75em;
   gap: 2em;
   max-width: 32em;
+  margin: 0 auto;
   padding-top: 40vh;
   transform-origin: top center;
   transform: perspective(100px) rotateX(10deg)
-    translateY(calc(0% - calc(var(--t) * 0.1%)));
-  transition-duration: 100ms;
+    translateY(calc(0% - calc(var(--pageY) * 0.1%)));
+  transition-duration: var(--speed);
   transition-property: transform;
   transition-timing-function: ease-out;
 }
 
 .item {
-  --o: 1;
-  opacity: var(--o);
+  --self: 1;
+  opacity: var(--self);
+}
+
+.box {
+  --opacity: 1;
+  --blur: 1;
+  --scale: 1;
+  opacity: var(--opacity);
 }
 
 .grad-text {
@@ -321,11 +333,43 @@ button {
   text-fill-color: transparent;
 }
 
+.boxes {
+  border: var(--debug-width) solid orange;
+  display: grid;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 100vh 5vw 0;
+  perspective: 2000px;
+  position: absolute;
+}
+
 .box {
+  font-size: 0.75em;
+  width: 22em;
+  /*margin-top: -2.5em;*/
+  transform-origin: top center;
+}
+
+.left {
+  transform: rotateY(25deg);
+  transform: rotateY(calc(50deg - calc(var(--scale) * 50deg)))
+    rotateX(calc(40deg - calc(var(--scale) * 20deg)))
+    rotateZ(calc(10deg - calc(var(--scale) * 10deg)));
+}
+
+.right {
+  justify-self: flex-end;
+  transform: rotateY(-25deg);
+  transform: rotateY(calc(-50deg + calc(var(--scale) * 50deg)))
+    rotateX(calc(40deg + calc(var(--scale) * 20deg)))
+    rotateZ(calc(10deg + calc(var(--scale) * 10deg)));
+}
+
+.box-body {
   background: linear-gradient(180deg, #04010b 0%, #221641 100%), #0b0813;
   border-style: dotted;
   border-width: 5px;
-
   border-image: linear-gradient(
       87.83deg,
       #f46722 0%,
@@ -337,15 +381,15 @@ button {
       #15e3d0 95.54%
     )
     1;
-
   display: grid;
   gap: 1em;
   padding: 2em;
-  position: absolute;
-  width: 22em;
-  left: 20vh;
-  transform: rotateY(45deg) translateY(calc(0% - calc(var(--t) * 0.1%)));
-  top: 100vh;
+  filter: blur(calc(var(--blur) * 10px));
+  /*transform: translateY(calc(100% - calc(var(--self) * 100%)));*/
+  transform: scale(calc(1.2 + calc(var(--scale) * 0.4)))
+    translateY(calc(var(--factor) * -200%));
+  /*transform: scale(calc(1 + calc(var(--scale) * 0.5)));*/
+  transform-origin: top center;
 }
 
 .grad-line {
