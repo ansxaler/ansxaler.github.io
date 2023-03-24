@@ -140,6 +140,13 @@ button {
 }
 
 .header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.newheader {
   align-items: center;
   border: var(--debug-width) solid blue;
   display: flex;
