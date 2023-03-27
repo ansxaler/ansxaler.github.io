@@ -102,6 +102,8 @@ optgroup,
 select,
 textarea {
   font-family: "Red Hat Display", sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 body {
@@ -135,7 +137,9 @@ button {
 
 .heading {
   font-size: 1.25em;
+  font-weight: 700;
   letter-spacing: 0.07em;
+  line-height: 1.25;
   text-transform: uppercase;
 }
 
@@ -279,7 +283,162 @@ button {
   width: 269.5px;
 }
 
+/* New home */
 .main {
+  display: grid;
+  position: relative;
+}
+
+.section {
+  align-content: center;
+  display: grid;
+  gap: 3rem;
+  padding: 3rem;
+  min-height: 100vh;
+}
+
+.stop {
+  gap: 6rem;
+}
+
+.stop .content {
+  text-align: center;
+}
+
+.content {
+  display: grid;
+  font-size: 1.5em;
+  gap: 1.5em;
+  max-width: 24em;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.quote {
+  max-width: 36em;
+  margin: 0 auto;
+  perspective: 100px;
+  font-size: 1.25em;
+}
+
+.quote blockquote {
+  background: linear-gradient(
+    87.83deg,
+    #f46722 -0.89%,
+    #f51e6d 12.17%,
+    #b30eab 32.23%,
+    #dc0b8c 49.84%,
+    #523ce9 64.4%,
+    #3b7bea 80.48%,
+    #15e3d0 95.54%
+  );
+  padding: 2em;
+  font-size: 1.5em;
+  transform-origin: bottom center;
+  transform: rotateX(5deg);
+  text-shadow: 0 0.5em 0.25em rgba(0, 0, 0, 0.2);
+}
+
+.quote div {
+  background: linear-gradient(
+    87.83deg,
+    #f46722 -0.89%,
+    #f51e6d 12.17%,
+    #b30eab 32.23%,
+    #dc0b8c 49.84%,
+    #523ce9 64.4%,
+    #3b7bea 80.48%,
+    #15e3d0 95.54%
+  );
+  padding: 0.25em;
+  transform-origin: top center;
+  transform: rotateX(-5deg);
+}
+
+.quote div p {
+  background: linear-gradient(180deg, #04010b 0%, #221641 100%), #0b0813;
+  padding: 0.5em;
+}
+
+.messages {
+  display: grid;
+  justify-content: center;
+}
+
+.message {
+  align-content: center;
+  display: grid;
+  font-size: 1.125em;
+  gap: 0.5em;
+  max-width: 36em;
+  min-height: 100vh;
+  text-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.2);
+}
+
+.message h3 {
+  font-size: 2em;
+}
+
+.content a,
+.message p {
+  background: linear-gradient(
+    87.83deg,
+    #f46722 -0.89%,
+    #f51e6d 12.17%,
+    #b30eab 32.23%,
+    #dc0b8c 49.84%,
+    #523ce9 64.4%,
+    #3b7bea 80.48%,
+    #15e3d0 95.54%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.message p {
+  font-size: 1.5em;
+}
+
+.content a {
+  position: relative;
+}
+
+.content a:active {
+  top: 1px;
+}
+
+.content a:hover::after {
+  transform: scaleX(1);
+}
+
+.content a::after {
+  background: linear-gradient(
+    87.83deg,
+    #f46722 -0.89%,
+    #f51e6d 12.17%,
+    #b30eab 32.23%,
+    #dc0b8c 49.84%,
+    #523ce9 64.4%,
+    #3b7bea 80.48%,
+    #15e3d0 95.54%
+  );
+  bottom: -4px;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: center left;
+  transition-duration: 0.4s;
+  transition-property: transform;
+  width: 100%;
+}
+
+/* Hello */
+.hello {
   align-items: flex-start;
   border: var(--debug-width) solid red;
   /*display: flex;*/
