@@ -85,7 +85,11 @@ th {
 }
 
 html {
-  background: linear-gradient(180deg, #04010b 0%, #221641 100%), #0b0813;
+  background-color: #0b0813;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  background-image: url("assets/Space.jpg");
   color: var(--white);
   font-size: 1em;
   -moz-osx-font-smoothing: grayscale;
@@ -173,15 +177,13 @@ button {
 }
 
 .overlay {
-  background-attachment: fixed;
-  background-position: center center;
-  background-size: cover;
-  background-image: url("assets/Space.jpg");
-  height: 100vh;
+  background: linear-gradient(180deg, #04010b 0%, #221641 100%), #0b0813;
   left: 0;
+  opacity: 0.1;
   position: fixed;
   top: 0;
-  width: 100vw;
+  right: 0;
+  bottom: 0;
 }
 
 .logo img {
@@ -268,12 +270,22 @@ button {
 }
 
 .cat {
+  --x: 1;
   bottom: 0;
   display: flex;
   right: 0;
   position: fixed;
-  transform-origin: center;
+  transform-origin: bottom right;
+  transform: translate(
+    calc(50% - calc(var(--x) * 50%)),
+    calc(20% - calc(var(--x) * 20%))
+  );
+}
+
+.cat figure {
+  display: flex;
   transform: rotate(-45deg) translate(0%, 20%);
+  transform-origin: center;
 }
 
 .cat img {
@@ -287,14 +299,24 @@ button {
 .main {
   display: grid;
   position: relative;
+  z-index: 3;
 }
 
 .section {
   align-content: center;
   display: grid;
   gap: 3rem;
-  padding: 3rem;
+  padding: 6rem 3rem;
+}
+
+.section.is-welcome,
+.section.is-email {
   min-height: 100vh;
+}
+
+.email.content {
+  justify-content: center;
+  text-align: center;
 }
 
 .stop {
@@ -362,7 +384,9 @@ button {
 
 .messages {
   display: grid;
+  gap: 12rem;
   justify-content: center;
+  padding: 6rem 3rem;
 }
 
 .message {
@@ -371,8 +395,7 @@ button {
   font-size: 1.125em;
   gap: 0.5em;
   max-width: 36em;
-  min-height: 100vh;
-  text-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.2);
+  /*text-shadow: 0 0.25em 0.25em rgba(0, 0, 0, 0.2);*/
 }
 
 .message h3 {
@@ -623,4 +646,22 @@ button {
       #15e3d0 95.54%
     )
     1;
+}
+
+@media (max-width: 800px) {
+  .cat {
+    z-index: 1;
+  }
+
+  .overlay {
+    z-index: 2;
+  }
+
+  .message h3 {
+    font-size: 1.25em;
+  }
+
+  .message p {
+    font-size: 1.125em;
+  }
 }

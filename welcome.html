@@ -43,14 +43,16 @@
     <meta name="theme-color" content="#5b26de" />
   </head>
   <body>
-    <div class="overlay"></div>
+    <div id="overlay" class="overlay"></div>
 
-    <figure class="cat">
-      <img src="assets/Cat-Contour.png" alt="The Sxaler Cat" />
-    </figure>
+    <div id="cat" class="cat" style="--x: 0">
+      <figure>
+        <img src="assets/Cat-Contour.png" alt="The Sxaler Cat" />
+      </figure>
+    </div>
 
     <main class="main">
-      <section class="section">
+      <section class="section is-welcome">
         <header class="header">
           <figure class="logo">
             <img src="assets/Sxaler-Type.png" alt="Sxaler" />
@@ -146,7 +148,7 @@
         </article>
       </div>
 
-      <section class="section">
+      <section class="section is-email">
         <div class="content email">
           <p>
             Email us directly at
@@ -155,5 +157,7 @@
         </div>
       </section>
     </main>
+
+    <script type="text/javascript" src="welcome.js"></script>
   </body>
 </html>
