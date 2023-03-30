@@ -316,6 +316,21 @@ button {
   display: flex;
   transform: rotate(-45deg) translate(0%, 20%);
   transform-origin: center;
+  animation-name: entercat;
+  animation-delay: 500ms;
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}
+
+@keyframes entercat {
+  from {
+    transform: rotate(5deg) translate(50%, 100%);
+  }
+
+  to {
+    transform: rotate(-45deg) translate(0%, 20%);
+  }
 }
 
 .cat img {
